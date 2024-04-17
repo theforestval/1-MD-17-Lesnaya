@@ -15,7 +15,7 @@ def second():
     img3.save('ежик3.jpg')
 
 def third():
-    image = Image.open('1.jpg')
+    image = Image.open('five/1.jpg')
     gray1 = image.convert('L')
     gray1.show()
 
