@@ -25,10 +25,10 @@ def third():
     draww = ImageDraw.Draw(crop)
     draww.text((270, 550), name, font=font, fill='purple')
     draww.text((240, 600), "поздравляю!", font=font, fill='pink')
+    crop.save("new_crop.jpg")
     crop.show()
 
 third()
-
 
 
 
