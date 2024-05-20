@@ -89,6 +89,21 @@ def second():
             else:
                 print('Нет в наличии!')
 
-second()
+def third():
+    dict2 = {}
+    dict = {'сat':'кошка','dog':'собака','home':'домашняя папка, дом', 'mouse':'мышь, манипулятор мыши', 'to do':'делать, изготавливать', 'to make': 'изготавливать'}
+    with open('en-ru.txt','w') as file:
+        for k, v in dict.items():
+            file.write(f'{k}'+'-'+f'{v}\n')
+    with open('en-ru.txt', 'r') as file:
+        dict1 = file.readlines()
+        for row in dict1:
+            k, v = row.split('-')
+            dict2[v] = k
+            with open('ru-en.txt','w') as file:
+                for k, v in sorted(dict2.items()):
+                    file.write(f'{k}'+'-'+f'{v}\n')
+
+third()
 
 
