@@ -7,18 +7,27 @@ class Restaurant:
         self.restaurant_level = restaurant_level
 
 class IceCreamStand(Restaurant):
-    def __init__(self, restaurant_name, cuisine_type, restaurant_level, restime, location, flavours = []):
+    def __init__(self, restaurant_name, cuisine_type, restaurant_level, restime, location):
         super().__init__(restaurant_name, cuisine_type, restaurant_level)
         self.restime = restime
         self.location = location
-        self.flavors = flavours
+        self.flavors = ['Шоколадное', 'Пломбир', 'Клубничное']
 
     def flavors_restaurant(self):
         print('Список мороженого: ', IceCreamStand.flavors)
 
     def flavors_add(self):
-        pass
+        if 'Крем-брюле' not in self.flavors:
+            self.flavors.append('Крем-брюле')
+            print('Список мороженого: ', IceCreamStand.flavors)
+
+    def flavors_rem(self):
+        if 'Пломбир' in self.flavors:
+            self.flavors.remove('Пломбир')
+            print('Список мороженого: ', IceCreamStand.flavors)
 
 
-IceCreamStand = IceCreamStand('Холодок', 'Мороженое', '5', '12', 'СПб', ['Крем-брюле', 'Шоколадное', 'Пломбир'])
+IceCreamStand = IceCreamStand('Холодок', 'Мороженое', '5', '12', 'СПб')
 IceCreamStand.flavors_restaurant()
+IceCreamStand.flavors_rem()
+IceCreamStand.flavors_add()
